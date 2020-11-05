@@ -57,17 +57,7 @@ void printstack(SqStack *s)
         printf("%d", s->data[s->top--]);
 }
 
-void conversion(SqStack *s, ElemType n)
-{
-    while (n / 2)
-    {
-        Push(s, n % 2);
-        n / 2;
-    }
-    printstack(s);
-}
-
-bool DtoBTrans(int n)
+bool conversion(int n) //十进制转换为二进制
 {
     SqStack *s;
     InitStack(s);
@@ -93,7 +83,8 @@ int main()
     printf("请输入要转化的数值：");
     int n;
     scanf("%d", &n);
-    DtoBTrans(n);
-    //conversion(s,n);
+    conversion(n);
+
+    printf("\n");
     return 0;
 }
