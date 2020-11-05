@@ -59,32 +59,34 @@ void printstack(SqStack *s)
 
 bool conversion(int n) //十进制转换为二进制
 {
-    SqStack *s;
-    InitStack(s);
+    SqStack *s2;
+    InitStack(s2);
     ElemType e;
     while (n)
     {
         e = n % 2;
-        Push(s, e);
+        Push(s2, e);
         n = n / 2;
     }
-    while (!StackEmpty(s))
+    while (!StackEmpty(s2))
     {
-        Pop(s, e);
+        Pop(s2, e);
         printf("%d", e);
     }
+    DestoryStack(s2);
     return true;
 }
 
 int main()
 {
-    // SqStack *s;
-    // InitStack(s);
+    SqStack *s;
+    InitStack(s);
+
+    //进制转换
     printf("请输入要转化的数值：");
     int n;
     scanf("%d", &n);
     conversion(n);
-
     printf("\n");
     return 0;
 }
