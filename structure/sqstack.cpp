@@ -81,6 +81,39 @@ int main()
 {
     SqStack *s;
     InitStack(s);
+    ElemType e;
+    int arr[] = {1, 2, 3, 4, 5, 6, 7};
+    printf("进栈序列为：");
+    for (int n = 0; n < 7; n++)
+    {
+        printf("%d", arr[n]);
+    }
+    printf("\n");
+
+    printf("出栈序列为：");
+    for (int i = 0; i < 3; i++)
+    {
+        Push(s, arr[i]);
+    }
+    Pop(s, e);
+    printf("%d", e);
+    Push(s, arr[3]);
+    Pop(s, e);
+    printf("%d", e);
+    Pop(s, e);
+    printf("%d", e);
+    Pop(s, e);
+    printf("%d", e);
+    for (int j = 4; j < 7; j++)
+    {
+        Push(s, arr[j]);
+    }
+    for (int k = 4; k < 7; k++)
+    {
+        Pop(s, e);
+        printf("%d", e);
+    }
+    printf("\n");
 
     //进制转换
     printf("请输入要转化的数值：");
